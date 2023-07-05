@@ -30,9 +30,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.requestMatchers(AUTHENTICATION_PATH, REGISTRATION_PATH)
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(AUTHENTICATION_PATH, REGISTRATION_PATH)
                         .permitAll().anyRequest().authenticated())
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .formLogin(AbstractHttpConfigurer::disable)
                 .authenticationProvider(authenticationProvider())
                 .addFilterAfter(jsonWebTokenFilter, UsernamePasswordAuthenticationFilter.class)
