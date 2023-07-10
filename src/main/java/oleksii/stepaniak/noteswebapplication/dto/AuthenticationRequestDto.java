@@ -1,9 +1,9 @@
-package oleksii.stepaniak.noteswebapplication.security;
+package oleksii.stepaniak.noteswebapplication.dto;
 
 import lombok.Data;
 
 @Data
-public class AuthenticationRequest {
+public class AuthenticationRequestDto {
     private String username;
     private String password;
 }

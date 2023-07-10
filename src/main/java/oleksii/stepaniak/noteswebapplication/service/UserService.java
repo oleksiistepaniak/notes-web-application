@@ -1,15 +1,16 @@
 package oleksii.stepaniak.noteswebapplication.service;
 
-import java.security.Principal;
+import java.util.Optional;
 import oleksii.stepaniak.noteswebapplication.model.User;
-import org.springframework.http.ResponseEntity;
 
 public interface UserService {
-    ResponseEntity<String> create(User user);
+    User create(User user);
 
-    ResponseEntity<String> remove(Long id, Principal principal);
+    void remove(Long id);
 
-    ResponseEntity<?> getById(Long id, Principal principal);
+    Optional<User> getById(Long id);
 
-    ResponseEntity<String> update(Long id, User user, Principal principal);
+    User update(Long id, User user);
+
+    boolean existsUserByEmail(String email);
 }

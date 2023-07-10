@@ -20,8 +20,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @Component
 @AllArgsConstructor
 public class JsonWebTokenFilter extends OncePerRequestFilter {
-    private static final String AUTHENTICATION_PATH = "/authentication/authenticate";
-    private static final String REGISTRATION_PATH = "/users/register";
+    private static final String AUTHENTICATION_PATH = "/authenticate";
+    private static final String REGISTRATION_PATH = "/register";
     private final UserDetailsService userDetailsService;
     private final JsonWebTokenUtil jsonWebTokenUtil;
 

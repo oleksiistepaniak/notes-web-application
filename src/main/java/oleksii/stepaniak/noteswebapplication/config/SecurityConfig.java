@@ -22,8 +22,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @AllArgsConstructor
 @EnableWebSecurity
 public class SecurityConfig {
-    private static final String AUTHENTICATION_PATH = "/authentication/authenticate";
-    private static final String REGISTRATION_PATH = "/users/register";
+    private static final String AUTHENTICATION_PATH = "/authenticate";
+    private static final String REGISTRATION_PATH = "/register";
     private final JsonWebTokenFilter jsonWebTokenFilter;
     private final UserDetailsService userDetailsService;
 
